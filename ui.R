@@ -44,12 +44,12 @@ shinyUI(fluidPage(
       # Checkbox input: whether or not to superimpose the normal distribution
       checkboxInput(
         "checkbox",
-        "Normal distribution?"),
+        "Normal distribution"),
       
       # Checkbox input: whether or not to display the confidence interval for the mean
       checkboxInput(
         "checkbox_confidence_mean",
-        "Mean confidence interval?",
+        "Mean confidence interval",
         value = FALSE),
       # Condition of what to display within the side panel if checkboxed is checked.
       conditionalPanel(
@@ -67,7 +67,7 @@ shinyUI(fluidPage(
       # Checkbox input: whether or not to display the confidence interval for the mean
       checkboxInput(
         "checkbox_confidence_variance",
-        "Variance confidence interval?",
+        "Variance confidence interval",
         value = FALSE),
       # Condition of what to display within the side panel if checkboxed is checked.
       conditionalPanel(
@@ -82,7 +82,7 @@ shinyUI(fluidPage(
                     value = 95)
       ),
       
-      # Checkbox: plot residuals or not?
+      # Checkbox: plot residuals or not
       checkboxInput(
         "checkbox_residuals",
         "Display residual plot",

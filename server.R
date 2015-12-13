@@ -76,9 +76,9 @@ shinyServer(function(input, output) {
     
     # Residual
     if (input$checkbox_residuals) {
-      lines(x = b, y = model$residuals, col = "red", type = "p", lw = 1)
-      legend("bottomright", c("Residual"), lty=1, lwd = 2, col="red", cex = 0.5)
-      output$textResBrent <- renderText({"In red is displayed the residuals."})
+      lines(x = b, y = model$residuals, col = "red", type = "p", pch = 17)
+      legend("bottomright", c("Residual", "Fit Line"), pch = c(17,NA), lty = c(NA,1), col=c("red", "darkblue"), cex = 0.5)
+      
     }
     
     # Regression table
@@ -107,9 +107,8 @@ shinyServer(function(input, output) {
     
     # Residual
     if (input$checkbox_residuals) {
-      lines(x = d, y = model$residuals, col = "red", type = "p", lw = 1)
-      legend("bottomright", c("Residual"), lty=1, lwd = 2, col="red", cex = 0.5)
-      output$textResTime <- renderText({"In red is displayed the residuals."})
+      lines(x = d, y = model$residuals, col = "red", type = "p", pch = 17)
+      legend("bottomright", c("Residual", "Fit Line"), pch = c(17,NA), lty = c(NA,1), col=c("red", "darkblue"), cex = 0.5)
     }
     
     # Regression table
@@ -139,9 +138,8 @@ shinyServer(function(input, output) {
     
     # Residual
     if (input$checkbox_residuals) {
-      lines(x = y, y = model$residuals, col = "red", type = "p", lw = 1)
-      legend("bottomright", c("Residual"), lty=1, lwd = 2, col="red", cex = 0.5)
-      output$textResStocks <- renderText({"In red is displayed the residuals."})
+      lines(x = y, y = model$residuals, col = "red", type = "p", pch = 17)
+      legend("bottomright", c("Residual", "Fit Line"), pch = c(17,NA), lty = c(NA,1), col=c("red", "darkblue"), cex = 0.5)
     }
     
     # Regression table

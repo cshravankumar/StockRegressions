@@ -72,12 +72,12 @@ shinyServer(function(input, output) {
          ylab = paste(input$var, "log return", sep = " "), 
          main = paste("Linear regression of", input$var, "over the Brent log return", sep = " "))
     lines(x = b, y = model$fit, col = "darkblue", type = "l", lw = 3)
-    legend("bottomright", c("Fit Line"), lty=1, lwd = 2, col="darkblue", cex = 0.5)
+    legend("bottomright", c("Fit Line"), lty=1, lwd = 2, col="darkblue", cex = 1)
     
     # Residual
     if (input$checkbox_residuals) {
       lines(x = b, y = model$residuals, col = "red", type = "p", pch = 17)
-      legend("bottomright", c("Residual", "Fit Line"), pch = c(17,NA), lty = c(NA,1), col=c("red", "darkblue"), cex = 0.5)
+      legend("bottomright", c("Residual", "Fit Line"), pch = c(17,NA), lty = c(NA,1), col=c("red", "darkblue"), cex = 1)
       
     }
     
@@ -103,12 +103,12 @@ shinyServer(function(input, output) {
          ylab = paste(input$var, "log return", sep = " "), 
          main = paste("Linear regression of", input$var, "over time (as integer)"))
     lines(x = d, y = model$fit, col = "darkblue", type = "l", lw = 3)
-    legend("bottomright", c("Fit Line"), lty=1, lwd = 2, col="darkblue", cex = 0.5)
+    legend("bottomright", c("Fit Line"), lty=1, lwd = 2, col="darkblue", cex = 1)
     
     # Residual
     if (input$checkbox_residuals) {
       lines(x = d, y = model$residuals, col = "red", type = "p", pch = 17)
-      legend("bottomright", c("Residual", "Fit Line"), pch = c(17,NA), lty = c(NA,1), col=c("red", "darkblue"), cex = 0.5)
+      legend("bottomright", c("Residual", "Fit Line"), pch = c(17,NA), lty = c(NA,1), col=c("red", "darkblue"), cex = 1)
     }
     
     # Regression table
@@ -134,12 +134,12 @@ shinyServer(function(input, output) {
          ylab = paste(input$var, "log return", sep = " "), 
          main = paste("Linear regression of", input$var, "over", input$var, sep = " "))
     lines(x = y, y = model$fit, col = "darkblue", type = "l", lw = 3)
-    legend("bottomright", c("Fit Line"), lty=1, lwd = 2, col="darkblue", cex = 0.5)
+    legend("bottomright", c("Fit Line"), lty=1, lwd = 2, col="darkblue", cex = 1)
     
     # Residual
     if (input$checkbox_residuals) {
       lines(x = y, y = model$residuals, col = "red", type = "p", pch = 17)
-      legend("bottomright", c("Residual", "Fit Line"), pch = c(17,NA), lty = c(NA,1), col=c("red", "darkblue"), cex = 0.5)
+      legend("bottomright", c("Residual", "Fit Line"), pch = c(17,NA), lty = c(NA,1), col=c("red", "darkblue"), cex = 1)
     }
     
     # Regression table

@@ -22,7 +22,7 @@ xom<-read.csv(paste(dir, "xom.csv", sep = ""))
 brent <- read.csv(paste(dir, "brent.csv", sep = ""))
 
 # Calculating the log returns
-col = c("CNX","COP","CVX","IPWR","JKS","SCTY","SLB","SPWR","VLO","XOM","BRENT")
+col = c("CONSOL Energy Inc.","ConocoPhillips Co.","Chevron Corporation","Ideal Power Inc","JinkoSolar Holding Co.","SolarCity Corp","Schlumberger Limited.","SunPower Corporation","Valero Energy Corporation","Exxon Mobil Corporation","BRENT")
 df_prices = data.frame(CNX=cnx["Close"], COP=cop["Close"], CVX=cvx["Close"], 
                        IPWR=ipwr["Close"], JKS=jks["Close"], SCTY=scty["Close"], 
                        SLB=slb["Close"], SPWR=spwr["Close"], VLO=vlo["Close"], 

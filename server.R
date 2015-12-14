@@ -158,10 +158,19 @@ shinyServer(function(input, output) {
   output$twoMeans <- renderPrint({
     x <- df_log_return[, input$var]
     y <- df_log_return[, input$comp]
-    test <- abs(mean(x,) - mean(y,)) / sqrt(sd(x,)^2/(length(x)) + sd(y,)^2/(length(y))) # test estimator
+    test <- (mean(x,) - mean(y,)) / sqrt(sd(x,)^2/(length(x)) + sd(y,)^2/(length(y))) # test estimator
     # Display the test result 
-    if(test > qnorm(0.025, lower.tail = FALSE)) {
-      output$mean_Comp <- renderText({"At five percent level of significance, the hypothesis that the means of the selected samples are equal is rejected."}) 
+    if(abs(test) > qnorm(0.025, lower.tail = FALSE)) {
+      output$mean_Comp <- renderText({"At five percent level of significance, the hypothesis that the means of the selected samples are equal is rejected."})
+      if (test < qnorm(0.05, lower.tail = FALSE)) {
+        output$mean_Comp <- renderText({paste("At five percent level of significance, the hypothesis that the means of", 
+                                              "the selected samples are equal is rejected. The data indicate that", input$var,
+                                              "has a lower mean log return that", input$comp, sep = " ")})
+      } else {
+        output$mean_Comp <- renderText({paste("At five percent level of significance, the hypothesis that the means of", 
+                                              "the selected samples are equal is rejected. The data indicate that", input$var,
+                                              "has a higher mean log return that", input$comp, sep = " ")})
+      }
     } else {
       output$mean_Comp <- renderText({"At five percent level of significance, the hypothesis that the means of the selected samples are equal is not rejected."})
     }
